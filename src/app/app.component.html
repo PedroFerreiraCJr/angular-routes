@@ -1,5 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <!-- a diretiva routerLink é quem é responsável por acionar uma rota configurado no modulo -->
+  <a routerLink="" class="navbar-brand">#Rotas Angular 2</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a routerLink="/login" class="nav-link">Login</a>   <!-- diretiva routerLink para /login -->
+      </li>
+      <li class="nav-item">
+        <a routerLink="/cursos" class="nav-link">Cursos</a>   <!-- diretiva routerLink para /cursos -->
+      </li>
+    </ul>
+  </div>
+</nav>
+
 <!--
   Esta é a tag do Angular 2 que faz com que determinado componente acionado
   pela rota seja renderizado nesta parte da tela.
 -->
-<router-outlet></router-outlet>
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
