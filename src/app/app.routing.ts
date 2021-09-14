@@ -1,8 +1,8 @@
-
 import { ModuleWithProviders } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
 import { CursosComponent } from './cursos/cursos.component';
+import { CursoDetalheComponent } from "./curso-detalhe/curso-detalhe.component";
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from "./home/home.component";
 
@@ -11,6 +11,7 @@ import { HomeComponent } from "./home/home.component";
 //final do Java.
 const APP_ROUTES: Routes = [    // Configuração de geral de rotas da aplicação
   { path: 'cursos', component: CursosComponent },
+  { path: 'curso/:id', component: CursoDetalheComponent }, // nesta rota foi definido um parâmetro chamado 'id'
   { path: 'login', component: LoginComponent },
   { path: '', component: HomeComponent }
 ];

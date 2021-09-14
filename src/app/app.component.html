@@ -14,6 +14,16 @@
       <li routerLinkActive="active" class="nav-item">         <!-- diretiva routerLinkActive possibilita que a rota ativa receba uma classe CSS qualquer -->
         <a routerLink="/cursos" class="nav-link">Cursos</a>   <!-- diretiva routerLink para /cursos -->
       </li>
+      <!-- esta rota possui um parâmetro -->
+      <li routerLinkActive="active" class="nav-item">         <!-- diretiva routerLinkActive possibilita que a rota ativa receba uma classe CSS qualquer -->
+        <!--
+          Na diretiva routerLink pode ser feito um property binding para passar dados dinâmicos,
+          e fazendo com o property é necessário utilizar um array.
+          *O primeiro parâmetro é a rota.
+          **O segundo parâmetro é o valor que deve ser o valor passado para a rota, ou seja, o parâmetro da rota.
+         -->
+        <a [routerLink]="['curso', idCurso.value]" class="nav-link">Curso Id</a>   <!-- diretiva routerLink para /cursos -->
+      </li>
     </ul>
   </div>
 </nav>
@@ -23,5 +33,7 @@
   pela rota seja renderizado nesta parte da tela.
 -->
 <div class="container-fluid">
+  <p>Entre com o id do curso</p>
+  <input type="text" #idCurso>
   <router-outlet></router-outlet>
 </div>
