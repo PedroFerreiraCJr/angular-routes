@@ -4,6 +4,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { CursosComponent } from './cursos/cursos.component';
 import { CursoDetalheComponent } from "./curso-detalhe/curso-detalhe.component";
 import { LoginComponent } from './login/login.component';
+import { CursoNaoEncontradoComponent } from "./curso-nao-encontrado/curso-nao-encontrado.component";
 import { HomeComponent } from "./home/home.component";
 
 // Esta palavra já era reservada do JavaScript mas não estava em uso,
@@ -13,6 +14,7 @@ const APP_ROUTES: Routes = [    // Configuração de geral de rotas da aplicaç�
   { path: 'cursos', component: CursosComponent },
   { path: 'curso/:id', component: CursoDetalheComponent }, // nesta rota foi definido um parâmetro chamado 'id'
   { path: 'login', component: LoginComponent },
+  { path: 'naoEncontrado', component: CursoNaoEncontradoComponent },
   { path: '', component: HomeComponent }
 ];
 
