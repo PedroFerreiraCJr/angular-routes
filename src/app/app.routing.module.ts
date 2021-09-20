@@ -13,10 +13,7 @@ import { HomeComponent } from "./home/home.component";
 //agora no ES6 ela passou a ser utilizada, e significa ser final, semelhante ao
 //final do Java.
 const appRoutes: Routes = [    // Configuração geral de rotas da aplicação
-  { path: 'cursos', component: CursosComponent },
-  { path: 'curso/:id', component: CursoDetalheComponent }, // nesta rota foi definido um parâmetro chamado 'id'
   { path: 'login', component: LoginComponent },
-  { path: 'naoEncontrado', component: CursoNaoEncontradoComponent },
   { path: '', component: HomeComponent }
 ];
 
