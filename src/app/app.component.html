@@ -12,7 +12,8 @@
         <a routerLink="/login" class="nav-link">Login</a>     <!-- diretiva routerLink para /login -->
       </li>
       <li routerLinkActive="active" class="nav-item">         <!-- diretiva routerLinkActive possibilita que a rota ativa receba uma classe CSS qualquer -->
-        <a routerLink="/cursos" class="nav-link">Cursos</a>   <!-- diretiva routerLink para /cursos -->
+        <!-- a passagem de parametros de query para a rota é através da diretiva queryParams -->
+        <a routerLink="/cursos" [queryParams]="{pagina: 1}" class="nav-link">Cursos</a>   <!-- diretiva routerLink para /cursos -->
       </li>
       <!-- esta rota possui um parâmetro -->
       <li routerLinkActive="active" class="nav-item">         <!-- diretiva routerLinkActive possibilita que a rota ativa receba uma classe CSS qualquer -->
