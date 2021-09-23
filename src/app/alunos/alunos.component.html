@@ -1,2 +1,20 @@
-<p>alunos works!</p>
-<router-outlet></router-outlet>
+<div class="row">
+  <div class="col-md-6">
+    <p>Lista de Alunos</p>
+    <ul class="list-group list-group-flush">
+      <!--
+        Perceba o valor passado para a diretiva routerLink, como estamos utilizando rotas filhas
+        na declaração das rotas para alunos, é possível omitir o primeiro parâmetro e passar
+        somente o parâmetro da rota.
+      -->
+      <a class="list-group-item"
+        *ngFor="let aluno of alunos"
+        [routerLink]="[aluno?.id]">{{ aluno?.nome }}
+      </a>
+    </ul>
+  </div>
+  <!-- o componente de detalhe do aluno vai ser visualizado neste parte de baixo -->
+  <div class="col-md-6">
+    <router-outlet></router-outlet>
+  </div>
+</div>

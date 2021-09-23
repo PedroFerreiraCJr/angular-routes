@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { Subscription } from 'rxjs';
+
+import { AlunosService } from '../alunos.service';
 
 @Component({
   selector: 'app-aluno-form',
@@ -7,9 +12,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlunoFormComponent implements OnInit {
 
-  constructor() { }
+  aluno: any;
+  subscription!: Subscription;
+
+  constructor(
+    private readonly activatedRoute: ActivatedRoute,
+    private readonly alunosService: AlunosService) { }
 
   ngOnInit(): void {
+    this.subscription = this.activatedRoute.params.subscribe((params) => {
+      const id = params['id'];
+
+      this.aluno = this.alunosService.getAluno(id);
+
+      if (this.aluno === null) {
+        this.aluno = {};
+      }
+    });
   }
 
+  ngOnDestroy(): void {
+    this.subscription?.unsubscribe();
+  }
 }
