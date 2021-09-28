@@ -39,7 +39,7 @@ export class CursoDetalheComponent implements OnInit {
       // neste caso, quando a rota o parâmetro passado para a rota é inválido, é invocado
       //no router o método navigate para ir para um componente de erro (404).
       if (this.curso == null) {
-        this.router.navigate(['/naoEncontrado']);
+        this.router.navigate(['cursos/naoEncontrado']);
       }
     });
   }

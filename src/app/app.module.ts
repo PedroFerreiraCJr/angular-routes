@@ -7,8 +7,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app.routing.module';
-import { CursosModule } from './cursos/cursos.module';
-import { AlunosModule } from './alunos/alunos.module';
+//import { CursosModule } from './cursos/cursos.module';
+//import { AlunosModule } from './alunos/alunos.module';
 
 @NgModule({
   declarations: [
@@ -18,10 +18,16 @@ import { AlunosModule } from './alunos/alunos.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    CursosModule,
+    // Segundo passo para o carregamento de módulo dinâmicos
+    // Remover o carregamento do módulo de outros módulo, não deve ter imports para o módulo
+    //com carregamento dinâmico.
+    //CursosModule,
+    // Segundo passo para o carregamento de módulo dinâmicos
+    // Remover o carregamento do módulo de outros módulo, não deve ter imports para o módulo
+    //com carregamento dinâmico.
+    //AlunosModule,
     NgbModule,
-    AlunosModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
