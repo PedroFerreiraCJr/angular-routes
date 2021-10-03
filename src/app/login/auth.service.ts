@@ -25,4 +25,9 @@ export class AuthService {
     this.usuarioAutenticado = false;
     this.mostrarMenuEmitter.emit(true);
   }
+
+  // método que informa se o usuário está logado ou não
+  public isUsuarioAutenticado(): boolean {
+    return this.usuarioAutenticado;
+  }
 }
