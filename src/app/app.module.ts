@@ -10,6 +10,8 @@ import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app.routing.module';
 import { AuthService } from './login/auth.service';
 import { AuthGuard } from './guards/auth.guard';
+import { CursosGuard } from './guards/cursos.guard';
+import { AlunosGuard } from './guards/alunos.guard';
 //import { CursosModule } from './cursos/cursos.module';
 //import { AlunosModule } from './alunos/alunos.module';
 
@@ -33,7 +35,12 @@ import { AuthGuard } from './guards/auth.guard';
     NgbModule,
     AppRoutingModule,
   ],
-  providers: [AuthService, AuthGuard],    // AuthGuard deve ser declarado pois é semelhante a um serviço que deve ser capaz de ser injetado
+  providers: [
+    AuthService,
+    AuthGuard,  // AuthGuard deve ser declarado pois é semelhante a um serviço que deve ser capaz de ser injetado
+    CursosGuard, // CursosGuard também deve ser declarado em um módulo
+    //AlunosGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
