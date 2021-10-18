@@ -13,6 +13,8 @@ import { AlunosService } from '../alunos.service';
 export class AlunoFormComponent implements OnInit {
 
   aluno: any;
+  alunoCopy: any;
+  changed: boolean = false;
   subscription!: Subscription;
 
   constructor(
@@ -28,10 +30,29 @@ export class AlunoFormComponent implements OnInit {
       if (this.aluno === null) {
         this.aluno = {};
       }
+
+      this.alunoCopy = Object.assign({}, this.aluno);
     });
   }
 
   ngOnDestroy(): void {
     this.subscription?.unsubscribe();
+  }
+
+  public onChange(event: any, attr: string): void {
+    const atual = event?.target?.value;
+    console.log(atual);
+    if (this.alunoCopy[attr] != atual) {
+      this.changed = true;
+      console.log('form alterado');
+    }
+  }
+
+  public podeAlterarRota(): boolean {
+    if (this.changed) {
+      return confirm('Houve alterações no form. Deseja sair da página?');
+    }
+
+    return true;
   }
 }

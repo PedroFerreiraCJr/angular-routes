@@ -3,11 +3,11 @@
 <div>
   <div class="form-group">
     <label for="nome">Nome</label>
-    <input id="nome" type="email" class="form-control" [(ngModel)]="aluno.nome">
+    <input id="nome" type="email" class="form-control" [(ngModel)]="aluno.nome" (input)="onChange($event, 'nome')">
   </div>
   <div class="form-group">
     <label for="email">E-mail</label>
-    <input id="email" type="text" class="form-control" [(ngModel)]="aluno.email">
+    <input id="email" type="text" class="form-control" [(ngModel)]="aluno.email" (input)="onChange($event, 'email')">
   </div>
   <button type="button" class="btn btn-primary">Submit</button>
 </div>
