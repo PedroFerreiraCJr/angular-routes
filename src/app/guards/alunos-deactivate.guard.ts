@@ -8,6 +8,7 @@ import { FormCanDeactivate } from './form-candeactivate';
 export class AlunosDeactivateGuard implements CanDeactivate<FormCanDeactivate> {
 
   constructor() { }
+  
   canDeactivate(component: FormCanDeactivate, route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot, nextState?: RouterStateSnapshot)
       :boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
