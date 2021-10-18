@@ -4,13 +4,14 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 import { AlunosService } from '../alunos.service';
+import { FormCanDeactivate } from 'src/app/guards/form-candeactivate';
 
 @Component({
   selector: 'app-aluno-form',
   templateUrl: './aluno-form.component.html',
   styleUrls: ['./aluno-form.component.css']
 })
-export class AlunoFormComponent implements OnInit {
+export class AlunoFormComponent implements OnInit, FormCanDeactivate {
 
   aluno: any;
   alunoCopy: any;
@@ -48,11 +49,15 @@ export class AlunoFormComponent implements OnInit {
     }
   }
 
-  public podeAlterarRota(): boolean {
+  public podeMudarRota(): boolean {
     if (this.changed) {
       return confirm('Houve alterações no form. Deseja sair da página?');
     }
 
     return true;
+  }
+
+  podeDesativar(): boolean {
+    return this.podeMudarRota();
   }
 }
