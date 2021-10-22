@@ -18,13 +18,15 @@ const appRoutes: Routes = [
   { path: 'cursos',
     loadChildren: () => import(`./cursos/cursos.module`).then(m => m.CursosModule),
     canActivate: [AuthGuard],    // guarda de rota de ativação para esta rota
-    canActivateChild: [CursosGuard]
+    canActivateChild: [CursosGuard],
+    canLoad: [AuthGuard]
   },
   { path: 'alunos',
     loadChildren: () => import(`./alunos/alunos.module`).then(m => m.AlunosModule),
     canActivate: [AuthGuard],    // guarda de rota de ativação para esta rota
     //canActivateChild: [AlunosGuard]   // guarda de rota de ativação para as rotas filhas deste módulo de roteamento
     // guando declarado neste nível o guard também é chamado para o componente parent das rotas, que neste caso é 'alunos'
+    canLoad: [AuthGuard]
   },
   { path: 'login', component: LoginComponent },
   { path: '', component: HomeComponent,
