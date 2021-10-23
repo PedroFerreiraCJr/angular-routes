@@ -19,8 +19,7 @@ export class AuthGuard implements CanActivate, CanLoad {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot)
     : boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-    console.log('verificando se o usuário está logado...
-    ');
+    console.log('verificando se o usuário está logado...');
     return this.verificarAcesso();
   }
 
